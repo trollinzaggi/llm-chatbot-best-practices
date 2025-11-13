@@ -36,7 +36,7 @@ class BaseChatbot:
         """Configure Streamlit page settings"""
         st.set_page_config(
             page_title=self.title,
-            page_icon="🤖",
+            page_icon="AI",
             layout="wide",
             initial_sidebar_state="expanded"
         )
@@ -65,7 +65,7 @@ class BaseChatbot:
     def render_sidebar(self):
         """Render sidebar with settings"""
         with st.sidebar:
-            st.header("⚙️ Settings")
+            st.header("Settings")
             
             # Temperature slider
             st.session_state.settings["temperature"] = st.slider(
@@ -97,13 +97,13 @@ class BaseChatbot:
             st.divider()
             
             # Clear chat button
-            if st.button("🗑️ Clear Chat", use_container_width=True):
+            if st.button("Clear Chat", use_container_width=True):
                 st.session_state.messages = []
                 st.session_state.chat_history = []
                 st.rerun()
             
             # Export chat button
-            if st.button("📥 Export Chat", use_container_width=True):
+            if st.button("Export Chat", use_container_width=True):
                 self.export_chat()
             
             st.divider()
@@ -113,19 +113,19 @@ class BaseChatbot:
     
     def render_connection_status(self):
         """Render Azure OpenAI connection status"""
-        st.subheader("🔌 Connection Status")
+        st.subheader("Connection Status")
         
         try:
             # Check if configuration is valid
             if config.endpoint and config.api_key:
-                st.success("✅ Connected to Azure OpenAI")
+                st.success("Connected to Azure OpenAI")
                 st.caption(f"Endpoint: {config.endpoint}")
                 st.caption(f"Deployment: {config.deployment_name}")
             else:
-                st.error("❌ Not configured")
+                st.error("Not configured")
                 st.caption("Please configure Azure OpenAI settings")
         except Exception as e:
-            st.error(f"❌ Configuration Error: {str(e)}")
+            st.error(f"Configuration Error: {str(e)}")
     
     def render_chat_messages(self):
         """Render chat message history"""
@@ -219,13 +219,13 @@ class ErrorHandler:
         error_msg = str(error)
         
         if "api_key" in error_msg.lower():
-            return "❌ API Key error. Please check your Azure OpenAI configuration."
+            return "API Key error. Please check your Azure OpenAI configuration."
         elif "quota" in error_msg.lower():
-            return "⚠️ Rate limit exceeded. Please wait a moment and try again."
+            return "Rate limit exceeded. Please wait a moment and try again."
         elif "deployment" in error_msg.lower():
-            return "❌ Deployment not found. Please check your deployment name."
+            return "Deployment not found. Please check your deployment name."
         elif "timeout" in error_msg.lower():
-            return "⏱️ Request timed out. Please try again."
+            return "Request timed out. Please try again."
         else:
             logger.error(f"API Error: {error_msg}")
-            return f"❌ An error occurred: {error_msg[:200]}..."
+            return f"An error occurred: {error_msg[:200]}..."

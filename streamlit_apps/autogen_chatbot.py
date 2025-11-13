@@ -28,7 +28,7 @@ class AutoGenChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="🤝 AutoGen Chatbot with Azure OpenAI",
+            title="AutoGen Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates AutoGen integration with Azure OpenAI.
             Features automated multi-agent conversations with code execution capabilities.
@@ -60,7 +60,7 @@ class AutoGenChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("🤝 AutoGen Settings")
+            st.subheader("AutoGen Settings")
             
             # Team type selection
             team_type = st.selectbox(
@@ -79,7 +79,7 @@ class AutoGenChatbot(BaseChatbot):
             st.caption("Current Team Composition:")
             if self.team and "agents" in self.team:
                 for agent in self.team["agents"]:
-                    st.caption(f"• {agent.name}")
+                    st.caption(f"- {agent.name}")
             
             # Max rounds setting
             st.session_state.max_rounds = st.number_input(
@@ -126,7 +126,7 @@ class AutoGenChatbot(BaseChatbot):
         """
         try:
             if self.team is None:
-                return "❌ Team not initialized. Please check your configuration."
+                return "Team not initialized. Please check your configuration."
             
             # Capture the conversation output
             output_buffer = io.StringIO()
@@ -182,7 +182,7 @@ class AutoGenChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries based on team type
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             team_type = st.session_state.get("current_team_type", "coding")
             
             if team_type == "coding":
@@ -207,7 +207,7 @@ class AutoGenChatbot(BaseChatbot):
                 st.caption("The brainstorming team will generate, critique, and synthesize ideas.")
         
         # Team interaction visualization
-        with st.expander("🤝 Team Interaction Flow"):
+        with st.expander("Team Interaction Flow"):
             team_type = st.session_state.get("current_team_type", "coding")
             
             if team_type == "coding":

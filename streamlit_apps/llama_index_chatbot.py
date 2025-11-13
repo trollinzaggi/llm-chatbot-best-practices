@@ -26,7 +26,7 @@ class LlamaIndexChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="📚 LlamaIndex Chatbot with Azure OpenAI",
+            title="LlamaIndex Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates LlamaIndex integration with Azure OpenAI.
             Features document indexing, retrieval-augmented generation (RAG), and context-aware conversations.
@@ -58,7 +58,7 @@ class LlamaIndexChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("📚 LlamaIndex Settings")
+            st.subheader("LlamaIndex Settings")
             
             # Query mode selection
             query_mode = st.selectbox(
@@ -89,7 +89,7 @@ class LlamaIndexChatbot(BaseChatbot):
             st.divider()
             
             # Document management
-            st.subheader("📄 Document Management")
+            st.subheader("Document Management")
             
             # Current documents info
             if self.rag_pipeline:
@@ -163,7 +163,7 @@ class LlamaIndexChatbot(BaseChatbot):
         """
         try:
             if self.rag_pipeline is None:
-                return "❌ Index not initialized. Please check your configuration."
+                return "Index not initialized. Please check your configuration."
             
             query_mode = st.session_state.get("query_mode", "Chat")
             
@@ -210,7 +210,7 @@ class LlamaIndexChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             col1, col2 = st.columns(2)
             
             with col1:
@@ -226,7 +226,7 @@ class LlamaIndexChatbot(BaseChatbot):
                 st.code("How do these AI technologies relate?")
         
         # Show indexed documents
-        with st.expander("📄 Indexed Documents"):
+        with st.expander("Indexed Documents"):
             if self.rag_pipeline and "documents" in self.rag_pipeline:
                 for i, doc in enumerate(self.rag_pipeline["documents"], 1):
                     metadata = doc.metadata if hasattr(doc, 'metadata') else {}
@@ -238,7 +238,7 @@ class LlamaIndexChatbot(BaseChatbot):
                     st.caption(preview)
         
         # RAG pipeline visualization
-        with st.expander("🔄 RAG Pipeline"):
+        with st.expander("RAG Pipeline"):
             st.mermaid("""
             graph LR
                 A[User Query] --> B[Embedding]

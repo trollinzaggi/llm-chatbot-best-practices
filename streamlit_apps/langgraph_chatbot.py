@@ -22,7 +22,7 @@ class LangGraphChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="🔀 LangGraph Chatbot with Azure OpenAI",
+            title="LangGraph Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates LangGraph integration with Azure OpenAI.
             Features include graph-based conversation flows, conditional routing, and iterative processing.
@@ -54,7 +54,7 @@ class LangGraphChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("🔀 LangGraph Settings")
+            st.subheader("LangGraph Settings")
             
             # Graph type selection
             graph_type = st.selectbox(
@@ -72,15 +72,15 @@ class LangGraphChatbot(BaseChatbot):
             # Graph visualization
             st.caption("Graph Information:")
             if graph_type == "simple":
-                st.caption("📊 Linear flow: Input → Process → Analyze → Finalize")
+                st.caption("Linear flow: Input -> Process -> Analyze -> Finalize")
             elif graph_type == "conditional":
-                st.caption("📊 Conditional routing based on input classification")
-                st.caption("• Questions → Question handler")
-                st.caption("• Tasks → Task handler")
-                st.caption("• Conversation → Conversation handler")
+                st.caption("Conditional routing based on input classification")
+                st.caption("- Questions -> Question handler")
+                st.caption("- Tasks -> Task handler")
+                st.caption("- Conversation -> Conversation handler")
             else:  # cyclic
-                st.caption("📊 Iterative improvement with max 3 cycles")
-                st.caption("Generate → Review → Improve (if needed) → Finalize")
+                st.caption("Iterative improvement with max 3 cycles")
+                st.caption("Generate -> Review -> Improve (if needed) -> Finalize")
             
             # Show graph state
             if st.checkbox("Show Graph State", value=False):
@@ -117,7 +117,7 @@ class LangGraphChatbot(BaseChatbot):
         """
         try:
             if self.graph is None:
-                return "❌ Graph not initialized. Please check your configuration."
+                return "Graph not initialized. Please check your configuration."
             
             # Run the graph with the user input
             response = run_graph_example(self.graph, prompt)
@@ -134,7 +134,7 @@ class LangGraphChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries based on graph type
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             graph_type = st.session_state.get("current_graph_type", "simple")
             
             if graph_type == "simple":
@@ -169,7 +169,7 @@ class LangGraphChatbot(BaseChatbot):
                 st.code("Describe the process of photosynthesis in detail")
         
         # Graph flow visualization
-        with st.expander("🔀 Graph Flow Visualization"):
+        with st.expander("Graph Flow Visualization"):
             graph_type = st.session_state.get("current_graph_type", "simple")
             
             if graph_type == "simple":

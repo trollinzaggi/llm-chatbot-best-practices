@@ -2,7 +2,7 @@
 
 This repository provides standardized setup and best practices for building LLM-based POCs using Azure OpenAI with various popular LLM libraries.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 azure-llm-poc-standards/
@@ -18,7 +18,7 @@ azure-llm-poc-standards/
 └── utils/                  # Shared utilities and helpers
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Environment Setup
 
@@ -76,7 +76,7 @@ streamlit run streamlit_apps/autogen_chatbot.py
 streamlit run streamlit_apps/llama_index_chatbot.py
 ```
 
-## 📚 Library Implementations
+## Library Implementations
 
 ### Agno
 - Basic Azure OpenAI setup with Agno
@@ -108,7 +108,7 @@ streamlit run streamlit_apps/llama_index_chatbot.py
 - Query engines
 - Chat engines with context
 
-## 🔧 Best Practices
+## Best Practices
 
 1. **Environment Variables**: Always use environment variables for sensitive information
 2. **Error Handling**: Implement proper error handling for API calls
@@ -117,11 +117,11 @@ streamlit run streamlit_apps/llama_index_chatbot.py
 5. **Testing**: Write unit tests for core functionality
 6. **Documentation**: Document all custom implementations
 
-## 📋 Requirements
+## Requirements
 
 See `requirements.txt` for full list of dependencies.
 
-## 🤝 Contributing
+## Contributing
 
 1. Create a feature branch
 2. Follow the existing code structure
@@ -129,10 +129,10 @@ See `requirements.txt` for full list of dependencies.
 4. Update documentation
 5. Submit a merge request
 
-## 📝 License
+## License
 
 [Your License Here]
 
-## 🆘 Support
+## Support
 
 For issues and questions, please create an issue in the GitLab repository.

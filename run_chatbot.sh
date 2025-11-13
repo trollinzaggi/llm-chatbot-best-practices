@@ -29,7 +29,7 @@ fi
 # Check if .env file exists
 if [ ! -f "config/.env" ]; then
     echo ""
-    echo "⚠️  Warning: config/.env file not found!"
+    echo "Warning: config/.env file not found!"
     echo "Please copy config/.env.example to config/.env and configure your Azure OpenAI settings."
     echo ""
     cp config/.env.example config/.env

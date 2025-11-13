@@ -21,7 +21,7 @@ class AgnoChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="🤖 Agno Chatbot with Azure OpenAI",
+            title="Agno Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates Agno integration with Azure OpenAI.
             Features include tool usage (calculator and weather) and structured responses.
@@ -58,7 +58,7 @@ class AgnoChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("🛠️ Agno Settings")
+            st.subheader("Agno Settings")
             
             # Tool usage toggle
             use_tools = st.checkbox(
@@ -70,8 +70,8 @@ class AgnoChatbot(BaseChatbot):
             
             # Available tools info
             st.caption("Available Tools:")
-            st.caption("• Calculator - Mathematical operations")
-            st.caption("• Weather - Get weather information")
+            st.caption("- Calculator: Mathematical operations")
+            st.caption("- Weather: Get weather information")
     
     def get_response(self, prompt: str) -> str:
         """
@@ -85,7 +85,7 @@ class AgnoChatbot(BaseChatbot):
         """
         try:
             if self.agent is None:
-                return "❌ Agent not initialized. Please check your configuration."
+                return "Agent not initialized. Please check your configuration."
             
             # Update temperature and max_tokens if changed
             self.agent.client = None  # Force recreation with new settings
@@ -110,7 +110,7 @@ class AgnoChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             col1, col2 = st.columns(2)
             
             with col1:

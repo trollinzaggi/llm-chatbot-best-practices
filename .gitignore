@@ -1,0 +1,134 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+config/.env
+*.env
+!.env.example
+!config/.env.example
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite3
+
+# AutoGen working directory
+coding/
+
+# Streamlit
+.streamlit/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Documentation build
+docs/_build/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# API keys and secrets (extra safety)
+*_secret.json
+*_credentials.json
+secrets.yaml
+secrets.toml
+api_keys.txt
+credentials.txt
+
+# Python virtual environment directories
+bin/
+include/
+lib64/
+pyvenv.cfg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Project specific
+output/
+results/
+experiments/
+checkpoints/
+models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth

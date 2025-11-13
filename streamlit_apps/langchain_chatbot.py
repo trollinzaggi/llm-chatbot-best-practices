@@ -21,7 +21,7 @@ class LangChainChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="🔗 LangChain Chatbot with Azure OpenAI",
+            title="LangChain Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates LangChain integration with Azure OpenAI.
             Features include conversation memory, chain of prompts, and structured reasoning.
@@ -56,7 +56,7 @@ class LangChainChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("🔗 LangChain Settings")
+            st.subheader("LangChain Settings")
             
             # Chain type selection
             chain_type = st.selectbox(
@@ -112,7 +112,7 @@ class LangChainChatbot(BaseChatbot):
         """
         try:
             if self.chain is None:
-                return "❌ Chain not initialized. Please check your configuration."
+                return "Chain not initialized. Please check your configuration."
             
             # Check if it's a conversation chain or other type
             if hasattr(self.chain, 'invoke'):
@@ -139,7 +139,7 @@ class LangChainChatbot(BaseChatbot):
                         return str(response)
                     return str(response)
             else:
-                return "❌ Invalid chain configuration"
+                return "Invalid chain configuration"
             
         except Exception as e:
             error_msg = ErrorHandler.handle_api_error(e)
@@ -151,7 +151,7 @@ class LangChainChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries based on chain type
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             col1, col2 = st.columns(2)
             
             with col1:

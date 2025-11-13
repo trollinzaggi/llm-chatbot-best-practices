@@ -26,7 +26,7 @@ class CrewAIChatbot(BaseChatbot):
     
     def __init__(self):
         super().__init__(
-            title="👥 CrewAI Chatbot with Azure OpenAI",
+            title="CrewAI Chatbot with Azure OpenAI",
             description="""
             This chatbot demonstrates CrewAI integration with Azure OpenAI.
             Features multi-agent collaboration with specialized roles working together to solve complex tasks.
@@ -58,7 +58,7 @@ class CrewAIChatbot(BaseChatbot):
         
         with st.sidebar:
             st.divider()
-            st.subheader("👥 CrewAI Settings")
+            st.subheader("CrewAI Settings")
             
             # Crew type selection
             crew_type = st.selectbox(
@@ -77,7 +77,7 @@ class CrewAIChatbot(BaseChatbot):
             st.caption("Current Crew Composition:")
             if self.crew:
                 for agent in self.crew.agents:
-                    st.caption(f"• {agent.role}")
+                    st.caption(f"- {agent.role}")
             
             # Task information
             st.caption("\nCrew Tasks:")
@@ -117,7 +117,7 @@ class CrewAIChatbot(BaseChatbot):
         """
         try:
             if self.crew is None:
-                return "❌ Crew not initialized. Please check your configuration."
+                return "Crew not initialized. Please check your configuration."
             
             # Prepare inputs based on crew type
             crew_type = st.session_state.get("current_crew_type", "research")
@@ -152,7 +152,7 @@ class CrewAIChatbot(BaseChatbot):
         super().render_header()
         
         # Show example queries based on crew type
-        with st.expander("💡 Example Queries"):
+        with st.expander("Example Queries"):
             crew_type = st.session_state.get("current_crew_type", "research")
             
             if crew_type == "research":
@@ -177,7 +177,7 @@ class CrewAIChatbot(BaseChatbot):
                 st.caption("The marketing crew will analyze the market, create strategy, and develop content.")
         
         # Crew workflow visualization
-        with st.expander("👥 Crew Workflow"):
+        with st.expander("Crew Workflow"):
             crew_type = st.session_state.get("current_crew_type", "research")
             
             if crew_type == "research":
