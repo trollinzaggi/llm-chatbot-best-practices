@@ -1,0 +1,66 @@
+{
+  "session": {
+    "max_messages": 50,
+    "max_tokens": 8000,
+    "summarize_after": 20,
+    "compression_ratio": 0.3
+  },
+  "persistent": {
+    "enabled": true,
+    "database_url": "memory.db",
+    "importance_threshold": 0.3,
+    "max_memories_per_user": 10000,
+    "consolidation_threshold": 0.8,
+    "default_expiry_days": 90
+  },
+  "retrieval": {
+    "semantic_search": true,
+    "top_k": 5,
+    "similarity_threshold": 0.7,
+    "use_embeddings": true,
+    "embedding_cache_size": 1000
+  },
+  "processing": {
+    "extract_entities": true,
+    "extract_facts": true,
+    "extract_preferences": true,
+    "importance_threshold": 0.5,
+    "auto_summarize": true,
+    "auto_consolidate": true
+  },
+  "frameworks": {
+    "langchain": {
+      "memory_type": "conversation_summary_buffer",
+      "memory_key": "history",
+      "return_messages": true
+    },
+    "langgraph": {
+      "enable_memory_nodes": true,
+      "track_state_history": true,
+      "max_cycles": 3
+    },
+    "crewai": {
+      "share_memories": true,
+      "broadcast_important": true,
+      "track_agent_expertise": true
+    },
+    "autogen": {
+      "learn_patterns": true,
+      "track_code_execution": true,
+      "build_skill_library": true
+    },
+    "llama_index": {
+      "index_type": "vector_store",
+      "hierarchical_indexing": true,
+      "document_consolidation": true
+    },
+    "agno": {
+      "track_tool_usage": true,
+      "extract_context_variables": true
+    }
+  },
+  "debug_mode": false,
+  "enable_telemetry": false,
+  "auto_save_interval": 10,
+  "memory_sync_enabled": true
+}
